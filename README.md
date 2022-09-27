@@ -1,5 +1,5 @@
 # TBA-Scouting-Validation
-Aoogle sheets app script that provides methods to validate scouted data via thebluealliance's V3 API.
+A google sheets app script that provides methods to validate scouted data via thebluealliance's V3 API. 
 
 ## Adding the Script To Your Sheet
 
@@ -20,4 +20,5 @@ Before you can use the script's function, you'll need an auth key to access the 
 
 The first line in your script should looking something like this after following these steps: 
 
-```auth_key = "auth_key_here";```
+```java 
+auth_key = "auth_key_here";```
