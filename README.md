@@ -32,7 +32,7 @@ This far, the script provides support for two validation methods:
 
 ## Finding the Event Key
 
-One of the parameters in all of the validation methods is `eventKey`. To obtain the `eventKey`, navigate to thebluealliance page for your particular event. For example, I would navigate to the following link to access thebluealliance page for the Central Valley Regional in 2022: 
+One of the parameters in all of the validation methods is `eventKey`. To obtain the `eventKey`, navigate to thebluealliance page for your particular event. For example, I would navigate to the following link to access thebluealliance page for the Monterey Bay Regional in 2022: 
 
 ```
 https://www.thebluealliance.com/event/2022camb
