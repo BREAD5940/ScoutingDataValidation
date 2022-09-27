@@ -25,7 +25,7 @@ auth_key = "auth_key_here";
 ```
 ## Using the Script
 
-This far, the script provides support for two validation methods:
+Thus far, the script provides support for two validation methods:
 
 * ```VALIDATE_ALLIANCE_SCORE(eventKey, qualsNumber, robotOneTotal, robotTwoTotal, robotThreeTotal, red)```- returns the difference between the scouted alliance score and real alliance score reported by thebluealliance. Note that this method already factors fouls into the calculation, so this is not something that you need to worry about. 
 * ```VALIDATE_ALLIANCE_ENDGAME(eventKey, qualsNumber, robotOneEndgame, robotTwoEndgame, robotThreeEndgame, red)``` - returns the difference between the scouted endgame alliance score and real endgame alliance score reported by the bluealliance. 
