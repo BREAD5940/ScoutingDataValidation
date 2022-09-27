@@ -20,5 +20,6 @@ Before you can use the script's function, you'll need an auth key to access the 
 
 The first line in your script should looking something like this after following these steps: 
 
-```java 
-auth_key = "auth_key_here";```
+```javascript
+auth_key = "auth_key_here";
+```
