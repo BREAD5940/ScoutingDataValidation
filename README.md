@@ -30,7 +30,7 @@ This far, the script provides support for two validation methods:
 * ```VALIDATE_ALLIANCE_SCORE(eventKey, qualsNumber, robotOneTotal, robotTwoTotal, robotThreeTotal, red)```- returns the difference between the scouted alliance score and real alliance score reported by thebluealliance. Note that this method already factors fouls into the calculation, so this is not something that you need to worry about. 
 * ```VALIDATE_ALLIANCE_ENDGAME(eventKey, qualsNumber, robotOneEndgame, robotTwoEndgame, robotThreeEndgame, red)``` - returns the difference between the scouted endgame alliance score and real endgame alliance score reported by the bluealliance. 
 
-## Finding the Event Key
+## Obtaining an Event Key
 
 One of the parameters in all of the validation methods is `eventKey`. To obtain the `eventKey`, navigate to thebluealliance page for your particular event. For example, I would navigate to the following link to access thebluealliance page for the Monterey Bay Regional in 2022: 
 
