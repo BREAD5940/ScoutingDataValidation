@@ -17,6 +17,20 @@ function VALIDATE_ALLIANCE_SCORE(eventKey, qualsNumber, robotOneTotal, robotTwoT
   return scoutedScore - realScore;
 }
 
+// COMPARES THE REAL SCORE TOTAL (AS REPORTED BY https://www.thebluealliance.com) TO THE SCOUTED TOTAL SCORE.
+// 0 DENOTES NO DIFFERENT BETWEEN THE SCOUTED ALLIANCE SCORE AND REAL SCORE.
+// A NEGATIVE NUMBER MEANS THAT THE SCOUTED ALLIANCE SCORE IS AN LESS THAN THE REAL ALLIANCE SCORE.
+// A POSITIVE NUMBER MEANS THAT THE SCOUTED ALLIANCE SCORE IS AN GREATER THAN THE REAL ALLIANCE SCORE.
+function VALIDATE_TOTAL_SCORE(eventKey, qualsNumber, scoutedScore) {
+  var match = getMatch_(eventKey, qualsNumber);
+
+  var redScore = match["score_breakdown"]["red"]["totalPoints"] - match["score_breakdown"]["red"]["foulPoints"];
+  var blueScore = match["score_breakdown"]["blue"]["totalPoints"] - match["score_breakdown"]["blue"]["foulPoints"];
+  var realScore = redScore + blueScore;
+
+  return scoutedScore - realScore;
+}
+
 // COMPARES THE REAL ENDGAME SCORE OF AN ALLIANCE (AS REPORTED BY https://www.thebluealliance.com) TO THE SCOUTED ENGAME SCORE OF AN ALLIANCE.
 // 0 DENOTES NO DIFFERENCE BETWEEN THE SCOUTED ENDGAME ALLIANCE SCORE AND THE REAL ENDGAME ALLIANCE SCORE.
 // A NEGATIVE NUMBER MEANS THAT THE SCOUTED ENDGAME ALLIANCE SCORE IS LESS THAN THE REAL ENDGAME ALLIANCE SCORE. 
