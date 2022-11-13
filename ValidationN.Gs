@@ -1,11 +1,11 @@
-var auth_key = ""; // Authorization key obtained from the https://www.thebluealliance.com/account to use the API
-var eventKey = ""; // Can be obtained from thebluealliance
-var inputSheet = ""; // This sheet must exist
-var outputSheet = ""; // This sheet must exist
+var auth_key = "sUA7XjgZaQysbshLwgVMck8AGqUMQZJCTBazacjNOiN3D2lxJXD02aoLQGw9MXRV"; // Authorization key obtained from the https://www.thebluealliance.com/account to use the API
+var eventKey = "2022mttd"; // Can be obtained from thebluealliance
+var inputSheet = "Sheet1"; // This sheet must exist
+var outputSheet = "Match_Checking"; // This sheet must exist
 
 function validate() {
   var s = SpreadsheetApp.getActiveSpreadsheet();
-  var sht = s.getSheetByName("Sheet2");
+  var sht = s.getSheetByName(inputSheet);
   var drng = sht.getDataRange();
   var rng = sht.getRange(2,1, drng.getLastRow()-1,drng.getLastColumn());
   var rngA = rng.getValues();
@@ -82,7 +82,7 @@ function validate() {
     b++;
   }
 
-  var shtout = s.getSheetByName("Sheet2_Output");
+  var shtout = s.getSheetByName(outputSheet);
   var outrng = shtout.getRange(2,1,rngB.length,12);
   outrng.setValues(rngB);
 
@@ -173,4 +173,3 @@ function getMatch_(eventKey, qualsNumber) {
   }
   return null;
 }
-
