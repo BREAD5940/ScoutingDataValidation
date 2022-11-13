@@ -93,11 +93,36 @@ function isOnRedAlliance_(eventKey, qualsNumber, teamNumber) {
   var match = getMatch_(eventKey, qualsNumber);
   var redRobots = match["alliances"]["red"]["team_keys"];
   for (var i = 0; i < 3; i++) {
-    if (redRobots[i].slice(3)==teamNumber) {
+    var teamNumberGoofy = redRobots[i].slice(3);  
+    var filteredTeamNum = convertAlphabeticalTeamNum(teamNumberGoofy);
+    if (filteredTeamNum==teamNumber) {
       return true;
     }
   }
   return false;
+}
+
+// Converts TBA team number to same format as scouting app 
+function convertAlphabeticalTeamNum(teamNum) {
+    if (teamNum == "7419B") {
+      return "9919";
+    }
+    var teamNumLength = teamNum.length;
+    var lastCharCode = teamNum.charCodeAt(teamNumLength - 1);
+    if (65 < lastCharCode && lastCharCode < 91) {
+      var strippedTeamNum = teamNum.substring(0, teamNumLength - 1);
+      var orgCharDiff = lastCharCode - 65;
+      var convertedChar = 10 - orgCharDiff;
+      
+      var returnTeamNum;
+      if (strippedTeamNum.length == 4) {
+        returnTeamNum = convertedChar + strippedTeamNum.substring(1, strippedTeamNum.length);
+      } else {
+        returnTeamNum = convertedChar + strippedTeamNum;
+      }
+      return returnTeamNum;
+    }
+    return teamNum;
 }
 
 // Returns the number of robots on an alliance that achieved the taxi bonus
